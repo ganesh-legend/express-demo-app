@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-demo-app-deployment
+  name: node-express-demo-app-deployment
   namespace: express
   labels:
-    app: node-demo-app
+    app: node-express-demo-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: node-demo-app
+      app: node-express-demo-app
   template:
     metadata:
       labels:
-        app: node-demo-app
+        app: node-express-demo-app
     spec:
       containers:
       - name: node-app
-        image: ganesh1326/node-demo-app:02
+        image: ganesh1326/express:latest
         ports:
         - containerPort: 3000
 
